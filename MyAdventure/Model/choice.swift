@@ -31,6 +31,9 @@ class Situation {
     func addChoice(_ choice : Choice) {
         self.choices.append(choice)
     }
+    func removeChoices() {
+        self.choices.removeAll()
+    }
 }
 
 class Choice {
@@ -47,6 +50,22 @@ class Choice {
     }
     
     func choose() -> Situation {
+        return destination!
+    }
+    
+    func changeDestination(_ newDestination : Situation) {
+        self.destination = newDestination
+    }
+}
+
+class KeyChoice : Choice {
+    var action : ()
+    init(_ desc : String, _ destination : Situation?,_ action : ()) {
+        self.action = action
+        super.init(desc, destination)
+    }
+    override func choose() -> Situation {
+        action // Run the function that does something when you make this choice.
         return destination!
     }
 }
