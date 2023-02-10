@@ -11,10 +11,12 @@ class Situation {
     var title : String
     var description : String
     var choices : Array<Choice>
+    var last : Bool
     
-    init(_ title: String, desc: String = "") {
+    init(_ title: String, _ desc: String = "", _ last : Bool = false) {
         self.title = title
         self.description = desc
+        self.last = last
         self.choices = []
     }
     
@@ -25,16 +27,19 @@ class Situation {
     func describe() -> String {
         return description
     }
+    
+    func addChoice(_ choice : Choice) {
+        self.choices.append(choice)
+    }
 }
 
 class Choice {
     var description : String
     var destination : Situation?
-    var last : Bool
     
-    init(_ desc : String, _ last : Bool = false) {
+    init(_ desc : String, _ destination : Situation?) {
         self.description = desc
-        self.last = last
+        self.destination = destination
     }
     
     func describe() -> String {
