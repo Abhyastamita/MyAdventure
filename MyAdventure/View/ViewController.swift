@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var gamelogic = gameLogic()
+    var game = gameLogic()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        game.setUpGame()
     }
 
 

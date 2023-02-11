@@ -14,7 +14,7 @@ class gameLogic {
     var situations : Array<Situation>
     
     init() {
-        situations = [
+        self.situations = [
             Situation("The beach", "Ugh. You wake up with sand in your mouth. You're feeling cold. This beach seemed like a good place to nap a few hours ago, but the sun is setting and all the tourists have left. Do you...?"), //0
             Situation("The edge of the water", "The water is really cold! You've heard some scary things about the currents here. Are you sure?"), //1
             Situation("The swirling maelstrom", "The rumors about the undertow were not exaggerated. You are swept out to sea where you perish. Do you want to play again?", true), //2
@@ -33,10 +33,13 @@ class gameLogic {
             Situation("The edge of the seacave", "You escape just as water rushes into the cave. Romeo jumps out of your arms and immediately settles on his owner's lap. The old lady thanks you profusely.  Good job! You not only survived but you saved the day! Do you want to play again?"), //15
             Situation("Water everywhere", "The roaring is deafening. Suddenly water rushes into the cave. Romeo dives down a tunnel that probably leads to the surface. But it's too small for you to follow and you die a watery death. Do you want to play again?") //16
         ]
-        
-        choices = generateChoices(situations: situations)
-        attachChoices()
+        self.choices = []
         pointer = situations[0]
+    }
+    
+    func setUpGame() {
+        self.choices = generateChoices(situations: situations)
+        attachChoices()
     }
     
     func generateChoices(situations : Array<Situation>) -> Array<Choice> {
@@ -71,14 +74,6 @@ class gameLogic {
         
     }
     
-    func obtainLight() {
-        choices[11].changeDestination(self.situations[11])
-    }
-    
-    func resetGame() {
-        choices[11].changeDestination(self.situations[9])
-        pointer = situations[0]
-    }
     
     // Add choices
     func attachChoices() {
@@ -114,6 +109,15 @@ class gameLogic {
         situations[16].addChoice(choices[13])
     }
     
+    func obtainLight() {
+        //choices[11].changeDestination(situations[11])
+    }
+    
+    func resetGame() {
+       // choices[11].changeDestination(situations[9])
+        pointer = situations[0]
+    }
+
     func makeAChoice(choice : Choice) {
         pointer = choice.choose()
     }
