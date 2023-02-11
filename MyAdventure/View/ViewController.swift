@@ -27,21 +27,25 @@ class ViewController: UIViewController {
     func updateUI() {
         situationTitle.text = game.getSituationTitle()
         situationDescription.text = game.describeSituation()
-        var choices = game.getChoices()
+        let choices = game.getChoices()
         var count = choices.count
         for (index, button) in choiceButtons.enumerated() {
             if count > 0 {
+                button.isEnabled = true
                 button.setTitle(choices[index].description, for: .normal)
                 count -= 1
-            } // disable or hide button
+            } else {
+                button.setTitle("", for: .normal)
+                button.isEnabled = false
+            }
         }
     }
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        var choiceText = sender.titleLabel!.text
-        var choices = game.getChoices()
-        var choice = choices.first(where: {$0.description == choiceText})
+        let choiceText = sender.titleLabel!.text
+        let choices = game.getChoices()
+        let choice = choices.first(where: {$0.description == choiceText})
         game.makeAChoice(choice: choice!)
         updateUI()
     }
