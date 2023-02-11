@@ -39,7 +39,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
+        var choiceText = sender.titleLabel!.text
+        var choices = game.getChoices()
+        var choice = choices.first(where: {$0.description == choiceText})
+        game.makeAChoice(choice: choice!)
+        updateUI()
     }
     
 
