@@ -12,6 +12,7 @@ class gameLogic {
     var choices : Array<Choice>
     var pointer : Situation
     var situations : Array<Situation>
+    var keyChoiceIndex = 11 //Index of choice that changes whether you can win the game
     
     init() {
         self.situations = [
@@ -110,12 +111,16 @@ class gameLogic {
     }
     
     func obtainLight() {
-        //choices[11].changeDestination(situations[11])
+//        choices[keyChoiceIndex].changeDestination(situations[11])
     }
     
     func resetGame() {
-       // choices[11].changeDestination(situations[9])
+//        choices[keyChoiceIndex].changeDestination(situations[9])
         pointer = situations[0]
+    }
+    
+    func setUpSpecialFunctions() {
+        
     }
 
     func makeAChoice(choice : Choice) {

@@ -69,7 +69,7 @@ class KeyChoice : Choice {
         super.init(desc, destination)
     }
     override func choose() -> Situation {
-        action // Run the function that does something when you make this choice.
+        var result = action // Run the function that does something when you make this choice.
         return destination!
     }
 }

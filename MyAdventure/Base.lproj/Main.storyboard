@@ -54,6 +54,9 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DvB-DC-YK6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-9g-sfd">
                                                 <rect key="frame" x="0.0" y="96" width="273" height="62.666666666666657"/>
@@ -63,6 +66,9 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFh-Yf-L9H"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oqT-nQ-L9X">
                                                 <rect key="frame" x="0.0" y="191.66666666666663" width="273" height="63"/>
@@ -72,6 +78,9 @@
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="How-mB-iF4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -96,6 +105,13 @@
                             <constraint firstItem="Et2-Rg-Yqp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vlR-gb-crx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="situationDescription" destination="cr5-Zl-Z24" id="gTB-hy-tGs"/>
+                        <outlet property="situationTitle" destination="4l3-7O-Il5" id="tbB-wI-6G4"/>
+                        <outletCollection property="choiceButtons" destination="X2m-h8-wmZ" collectionClass="NSMutableArray" id="dRx-63-Tkf"/>
+                        <outletCollection property="choiceButtons" destination="pxQ-9g-sfd" collectionClass="NSMutableArray" id="2rr-QS-xyY"/>
+                        <outletCollection property="choiceButtons" destination="oqT-nQ-L9X" collectionClass="NSMutableArray" id="V4x-c2-la3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
