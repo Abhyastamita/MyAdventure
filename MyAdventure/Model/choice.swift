@@ -28,6 +28,10 @@ class Situation {
         return description
     }
     
+    func getTitle() -> String {
+        return title
+    }
+    
     func addChoice(_ choice : Choice) {
         self.choices.append(choice)
     }
