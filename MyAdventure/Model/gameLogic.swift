@@ -12,7 +12,6 @@ class gameLogic {
     var choices : Array<Choice>
     var pointer : Situation
     var situations : Array<Situation>
-    var keyChoiceIndex = 11 //Index of choice that changes whether you can win the game
     
     init() {
         self.situations = [
@@ -49,7 +48,7 @@ class gameLogic {
             Choice("Yes!", situations[2]), //1
             Choice("On second thought...", situations[3]), //2
             Choice("Pack up your stuff and head back into town", situations[4]), //3
-            KeyChoice("Pick it up", situations[5], obtainLight()), //4
+            KeyChoice("Pick it up", situations[5], obtainLight), //4
             Choice("Go back and investigate the sea cave", situations[7]), //5
             Choice("Keep going back to town", situations[6]), //6
             Choice("Leave it alone. It might have cooties", situations[6]), //7
@@ -58,7 +57,7 @@ class gameLogic {
             Choice("Ask what happened", situations[8]), //10
             Choice("Say of course you'll help!", situations[9]), //11
             Choice("You don't want to get trapped in the seacave either. Make an excuse and leave", situations[4]), //12
-            KeyChoice("Yes!", situations[0], resetGame()), //13
+            KeyChoice("Yes!", situations[0], resetGame), //13
             Choice("Climb back out of the cave", situations[10]), //14
             Choice("Go back to the beach", situations[3]), //15
             Choice("Head back to town", situations[4]), //16
@@ -107,21 +106,25 @@ class gameLogic {
         situations[13].addChoice(choices[18])
         situations[13].addChoice(choices[19])
         situations[14].addChoice(choices[22])
+        situations[14].addChoice(choices[21])
         situations[15].addChoice(choices[13])
         situations[16].addChoice(choices[13])
     }
     
     func obtainLight() {
-//        choices[keyChoiceIndex].changeDestination(situations[11])
+        print("Obtain light ran")
+        if choices.count > 0 {
+            choices[11].changeDestination(situations[11])
+            print("Obtain Light ran and choice 11 destination is \(choices[11].destination!.getTitle())")
+        }
     }
     
     func resetGame() {
-//        choices[keyChoiceIndex].changeDestination(situations[9])
-        pointer = situations[0]
-    }
-    
-    func setUpSpecialFunctions() {
-        
+        if choices.count > 0 {
+            choices[11].changeDestination(situations[9])
+            print("Reset ran and choice 11 destination is \(choices[11].destination!.getTitle())")
+            pointer = situations[0]
+        }
     }
 
     func makeAChoice(choice : Choice) {

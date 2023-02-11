@@ -63,13 +63,14 @@ class Choice {
 }
 
 class KeyChoice : Choice {
-    var action : ()
-    init(_ desc : String, _ destination : Situation?,_ action : ()) {
+    var action : () -> Void
+    init(_ desc : String, _ destination : Situation?,_ action : @escaping () -> Void) {
+        print("Init for key choice")
         self.action = action
         super.init(desc, destination)
     }
     override func choose() -> Situation {
-        var result = action // Run the function that does something when you make this choice.
+        self.action() // Run the function that does something when you make this choice.
         return destination!
     }
 }
