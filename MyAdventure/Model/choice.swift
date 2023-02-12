@@ -12,11 +12,13 @@ class Situation {
     var description : String
     var choices : Array<Choice>
     var last : Bool
+    var id: Int
     
-    init(_ title: String, _ desc: String = "", _ last : Bool = false) {
+    init(_ title: String, _ desc: String = "",_ id : Int, _ last : Bool = false) {
         self.title = title
         self.description = desc
         self.last = last
+        self.id = id
         self.choices = []
     }
     
@@ -30,6 +32,10 @@ class Situation {
     
     func getTitle() -> String {
         return title
+    }
+    
+    func getID() -> Int {
+        return id
     }
     
     func addChoice(_ choice : Choice) {

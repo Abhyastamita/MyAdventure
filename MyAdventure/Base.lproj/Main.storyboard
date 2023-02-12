@@ -106,6 +106,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="Et2-Rg-Yqp" id="Aec-pr-7Vr"/>
                         <outlet property="situationDescription" destination="cr5-Zl-Z24" id="gTB-hy-tGs"/>
                         <outlet property="situationTitle" destination="4l3-7O-Il5" id="tbB-wI-6G4"/>
                         <outletCollection property="choiceButtons" destination="X2m-h8-wmZ" collectionClass="NSMutableArray" id="dRx-63-Tkf"/>

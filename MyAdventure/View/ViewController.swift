@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var choiceButtons: [UIButton]!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     func updateUI() {
         situationTitle.text = game.getSituationTitle()
         situationDescription.text = game.describeSituation()
+        backgroundImage.image = UIImage(named: String(game.getID()))
         let choices = game.getChoices()
         var count = choices.count
         for (index, button) in choiceButtons.enumerated() {
