@@ -71,7 +71,6 @@ class Choice {
 class KeyChoice : Choice {
     var action : () -> Void
     init(_ desc : String, _ destination : Situation?,_ action : @escaping () -> Void) {
-        print("Init for key choice")
         self.action = action
         super.init(desc, destination)
     }

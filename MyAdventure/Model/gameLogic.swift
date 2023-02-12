@@ -112,17 +112,14 @@ class gameLogic {
     }
     
     func obtainLight() {
-        print("Obtain light ran")
         if choices.count > 0 {
             choices[11].changeDestination(situations[11])
-            print("Obtain Light ran and choice 11 destination is \(choices[11].destination!.getTitle())")
         }
     }
     
     func resetGame() {
         if choices.count > 0 {
             choices[11].changeDestination(situations[9])
-            print("Reset ran and choice 11 destination is \(choices[11].destination!.getTitle())")
             pointer = situations[0]
         }
     }
