@@ -106,7 +106,7 @@ class gameLogic {
         situations[13].addChoice(choices[18])
         situations[13].addChoice(choices[19])
         situations[14].addChoice(choices[22])
-        situations[14].addChoice(choices[21])
+        situations[14].addChoice(choices[23])
         situations[15].addChoice(choices[13])
         situations[16].addChoice(choices[13])
     }
